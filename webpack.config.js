@@ -2,7 +2,7 @@ var path = require("path")
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/mian.js",
+  entry: "./src/main.js",
   output: {
     path: path.join(__dirname, "dist"),
     filename: "bundle.js"
@@ -66,8 +66,8 @@ module.exports = {
   },
   plugins:[
     new HtmlWebpackPlugin({
-      filename:'./src/index.html',
-      template:'template.html',
+      filename:'index.html',
+      template:'./src/index.html',
       title:'hello vue'
     })
   ]
