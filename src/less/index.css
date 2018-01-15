@@ -1,0 +1,9 @@
+html,
+body {
+  height: 100%;
+}
+html .el-form-item__label,
+body .el-form-item__label {
+  line-height: 20px;
+  color: #fff;
+}

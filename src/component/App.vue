@@ -1,16 +1,19 @@
 <template>
-  <div>测试环境是否正常运行</div>
+  <div id="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {
+  
+};
 </script>
 
-<style>
-  body{
-    color: red;
-  }
+<style scoped>
+#app {
+  height: 100%;
+  background-color: rgb(38, 124, 183);
+}
 </style>
 
