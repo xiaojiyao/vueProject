@@ -7,3 +7,24 @@ body .el-form-item__label {
   line-height: 20px;
   color: #fff;
 }
+html .el-table__header-wrapper,
+body .el-table__header-wrapper {
+  line-height: 0px;
+}
+html .el-table th,
+body .el-table th {
+  text-align: center;
+  border: 1px solid #dfe6ec;
+  background-color: #eef1f6;
+  color: black;
+}
+html .el-table td,
+body .el-table td {
+  border: 1px solid #dfe6ec;
+}
+html .el-table,
+body .el-table {
+  border-collapse: collapse;
+  border: 1px solid #dfe6ec;
+  margin-bottom: 30px;
+}

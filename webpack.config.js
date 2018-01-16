@@ -79,7 +79,6 @@ module.exports = {
       template: './src/index.html', //要处理的html文件
       filename: 'index.html',  //处理后的文件名
       title: 'hello vue'
-
     })
   ]
 }

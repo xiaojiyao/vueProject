@@ -48,7 +48,7 @@ export default {
     logout() {
       this.$http.get(this.$api.logout)
       .then(res=>{
-        if(res.status == 200){
+        if(res.data.status == 0){
           this.$alert(res.data.message);
           setTimeout(() => {
             this.$router.push({name:"login"});

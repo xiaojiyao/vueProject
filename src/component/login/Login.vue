@@ -51,7 +51,8 @@ export default {
         if (res.data.status == 0) {
           this.$alert("登录成功");
           setTimeout(() => {
-            this.$router.push({ name: "admin" });
+            let nextPage = this.$route.query.nextPage;
+            this.$router.push(nextPage ? nextPage : "/admin");
           }, 500);
         } else {
           this.$alert(res.data.message);

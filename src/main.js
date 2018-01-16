@@ -27,7 +27,7 @@ Vue.use(Router);
 Vue.use(ElementUi);
 
 // 配置axios请求时请求的默认域名
-axios.defaults.baseURL = 'http://157.122.54.189:9095';
+axios.defaults.baseURL = 'http://localhost:8899';
 
 // 我们是跨域请求的接口, 默认不会携带cookie等信息, 后端需要这些信息来判断登陆状态, 所以要设为true
 axios.defaults.withCredentials = true;
@@ -38,9 +38,15 @@ Vue.prototype.$http = axios;
 // api也不属于vue的内置插件，所以添加到vue原型上
 Vue.prototype.$api = api;
 
+// 定义路由实例
+let vueRouter  = new Router(routerConfig);
+// 引入路由守卫文件，，并将路由守卫挂到实例上
+import beforeEach from '../src/router/beforeEach.js';
+vueRouter.beforeEach(beforeEach);
+
 
 new Vue({
   el: "#app",
-  router: new Router(routerConfig),
+  router: vueRouter,
   render: e => e(App)
 });

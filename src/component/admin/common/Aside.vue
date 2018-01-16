@@ -1,12 +1,12 @@
 <template>
   <el-menu default-active="" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
-    <el-submenu v-for="(item,index) in menu" :key="item.title" :index="index">
+    <el-submenu v-for="item in menu" :key="item.title" :index="item.title">
       <template slot="title">
         <i class="el-icon-message"></i>
         <span>{{item.title}}</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item :index="index-subindex" v-for="(subitem,subindex) in item.children" :key="subitem.title">
+        <el-menu-item :index="subitem.title" v-for="subitem in item.children" :key="subitem.title">
           <router-link :to="subitem.path">{{subitem.title}}</router-link>
         </el-menu-item>
       </el-menu-item-group>
@@ -20,34 +20,36 @@
   min-height: 400px;
   background-color: #267cb7;
 }
-.el-aside{
+.el-aside {
   height: 100%;
   background-color: #267cb7;
 }
-.el-menu-item{
-  background-color: #267cb7;  
+.el-menu-item {
+  background-color: #267cb7;
 }
-.el-menu-item-group__title{
+.el-menu-item-group__title {
   padding: 0;
 }
-.el-submenu__title i{
+.el-submenu__title i {
   color: #fff;
 }
-.el-menu-item, .el-submenu__title {
-    color: #fff;
-    height: 56px;
-    line-height: 56px;
-    padding: 0 100px;
-    position: relative;
-    -webkit-box-sizing: border-box;
-    cursor: pointer;
-    white-space: nowrap;
+.el-menu-item,
+.el-submenu__title {
+  color: #fff;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 100px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  cursor: pointer;
+  white-space: nowrap;
 }
-.el-submenu__title:hover{
-  background-color: #20a0ff; 
+.el-submenu__title:hover {
+  background-color: #20a0ff;
 }
-.el-menu-item:focus, .el-menu-item:hover{
-  background-color: #20a0ff;   
+.el-menu-item:focus,
+.el-menu-item:hover {
+  background-color: #20a0ff;
 }
 </style>
 
@@ -154,21 +156,18 @@ export default {
     };
   },
   methods: {
-    handleOpen(key, keyPath) {
-    },
-    handleClose(key, keyPath) {
-
-    }
+    handleOpen(key, keyPath) {},
+    handleClose(key, keyPath) {}
   }
 };
 </script>
   
 <style scoped>
-  a{
-    text-decoration:none;
-    color:#fff;
-  }
-  .el-submenu__title{
-    color:#fff;
-  }
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.el-submenu__title {
+  color: #fff;
+}
 </style>
